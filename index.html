@@ -1,27 +1,67 @@
-<input type="text" id="wordInput" placeholder="Gib dein Wort ein">
-<button onclick="checkWord()">Prüfen</button>
-<p id="result"></p>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schnitzeljagd</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            margin-top: 40px;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px;
+        }
+        #wordInput {
+            font-size: 1.5em;
+            padding: 10px;
+            width: 300px;
+            margin-bottom: 20px;
+        }
+        button {
+            font-size: 1.2em;
+            padding: 10px 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Kaddas Schnitzeljagd</h1>
+    <div class="container">
+        <input type="text" id="wordInput" placeholder="Gib dein Wort ein">
+        <button onclick="checkWord()">Prüfen</button>
+        <p id="result"></p>
+    </div>
 
-<script>
-  const richtigeWorte = {
-    "sebastian": "https://maps.app.goo.gl/pw7oiPQmsWdaXwVF9",
-    "rathaus": "https://maps.app.goo.gl/Dd9PQP2Q5qKRhwTt5",
-    "geburtstag": "https://maps.app.goo.gl/ckzmLBcRWyvv5FNF6",
-    "schwan": "https://maps.app.goo.gl/71vhrBmnCaXB3XoCA",
-    "bier": "https://maps.app.goo.gl/CQ6BddXubSUNH59F6",
-    "handtuch": "https://maps.app.goo.gl/r7odsZ4NeuSiryUr8",
-    "blume": "https://maps.app.goo.gl/ZZpGVsrbgU7aQA9p6",
-    "master": "https://maps.app.goo.gl/zfXEfzk2qNjTGXA8A"
-  };
+    <script>
+        const richtigeWorte = {
+            "sebastian": "https://maps.app.goo.gl/pw7oiPQmsWdaXwVF9",
+            "rathaus": "https://maps.app.goo.gl/Dd9PQP2Q5qKRhwTt5",
+            "geburtstag": "https://maps.app.goo.gl/ckzmLBcRWyvv5FNF6",
+            "schwan": "https://maps.app.goo.gl/71vhrBmnCaXB3XoCA",
+            "bier": "https://maps.app.goo.gl/CQ6BddXubSUNH59F6",
+            "handtuch": "https://maps.app.goo.gl/r7odsZ4NeuSiryUr8",
+            "blume": "https://maps.app.goo.gl/ZZpGVsrbgU7aQA9p6",
+            "master": "https://maps.app.goo.gl/zfXEfzk2qNjTGXA8A"
+        };
 
-  function checkWord() {
-    const input = document.getElementById("wordInput").value.trim().toLowerCase();
-    const result = document.getElementById("result");
+        function checkWord() {
+            const input = document.getElementById("wordInput").value.trim().toLowerCase();
+            const result = document.getElementById("result");
 
-    if (richtigeWorte[input]) {
-      result.innerHTML = `✅ Richtige Wahl! <a href="${richtigeWorte[input]}" target="_blank">Zur Adresse</a>`;
-    } else {
-      result.innerHTML = `❌ Niete<br><img src="https://media1.tenor.com/m/AEZMmpSwgzcAAAAC/boo.gif" alt="Boo GIF" style="max-width:200px;">`;
-    }
-  }
-</script>
+            if (richtigeWorte[input]) {
+                result.innerHTML = `✅ Richtige Wahl! <a href="${richtigeWorte[input]}" target="_blank">Zur Adresse</a>`;
+            } else {
+                result.innerHTML = `❌ Niete<br><img src="https://media1.tenor.com/m/AEZMmpSwgzcAAAAC/boo.gif" alt="Boo GIF" style="max-width:200px;">`;
+            }
+        }
+    </script>
+</body>
+</html>
