@@ -4,17 +4,18 @@
 
 <script>
   const richtigeWorte = {
-    "Sebastian": "https://maps.app.goo.gl/PRabfaLXE3fEXyXz6",
-    "Rathaus": "https://maps.app.goo.gl/Dd9PQP2Q5qKRhwTt5",
-    "Geburtstag": "https://maps.app.goo.gl/ckzmLBcRWyvv5FNF6",
-    "Schwan": "https://maps.app.goo.gl/71vhrBmnCaXB3XoCA",
-    "Bier": "https://maps.app.goo.gl/CQ6BddXubSUNH59F6",
-    "Handtuch": "https://maps.app.goo.gl/r7odsZ4NeuSiryUr8",
-    "Blume": "https://maps.app.goo.gl/ZZpGVsrbgU7aQA9p6"
+    "sebastian": "https://maps.app.goo.gl/pw7oiPQmsWdaXwVF9",
+    "rathaus": "https://maps.app.goo.gl/Dd9PQP2Q5qKRhwTt5",
+    "geburtstag": "https://maps.app.goo.gl/ckzmLBcRWyvv5FNF6",
+    "schwan": "https://maps.app.goo.gl/71vhrBmnCaXB3XoCA",
+    "bier": "https://maps.app.goo.gl/CQ6BddXubSUNH59F6",
+    "handtuch": "https://maps.app.goo.gl/r7odsZ4NeuSiryUr8",
+    "blume": "https://maps.app.goo.gl/ZZpGVsrbgU7aQA9p6",
+    "master": "https://maps.app.goo.gl/zfXEfzk2qNjTGXA8A"
   };
 
   function checkWord() {
-    const input = document.getElementById("wordInput").value.trim();
+    const input = document.getElementById("wordInput").value.trim().toLowerCase();
     const result = document.getElementById("result");
 
     if (richtigeWorte[input]) {
