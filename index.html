@@ -1,0 +1,26 @@
+<input type="text" id="wordInput" placeholder="Gib dein Wort ein">
+<button onclick="checkWord()">Prüfen</button>
+<p id="result"></p>
+
+<script>
+  const richtigeWorte = {
+    "Apfel": "https://www.beispiel.de/apfel",
+    "Birne": "https://www.beispiel.de/birne",
+    "Orange": "https://www.beispiel.de/orange",
+    "Mango": "https://www.beispiel.de/mango",
+    "Pfirsich": "https://www.beispiel.de/pfirsich",
+    "Kiwi": "https://www.beispiel.de/kiwi",
+    "Banane": "https://www.beispiel.de/banane"
+  };
+
+  function checkWord() {
+    const input = document.getElementById("wordInput").value.trim();
+    const result = document.getElementById("result");
+
+    if (richtigeWorte[input]) {
+      result.innerHTML = `✅ Richtige Wahl! <a href="${richtigeWorte[input]}" target="_blank">Zur Adresse</a>`;
+    } else {
+      result.innerHTML = "❌ Niete";
+    }
+  }
+</script>
